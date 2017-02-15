@@ -1,0 +1,5 @@
+.DS_Store
+auth.json
+EasyNolo/
+ubuntu-xenial-*
+.vagrant/
