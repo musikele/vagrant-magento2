@@ -25,6 +25,12 @@ The first time it can take even 10 minutes to work. Once you're ready go to [htt
 
 put your plugins unzipped in the `plugins` folder. They will be copied over magento's `app/code/` directory. 
 
+To install the plugin you have to launch this command: 
+
+```
+$ php bin/magento setup:upgrade
+```
+
 ## sensitive informations 
 
 database user is `root`, password is `password`. 

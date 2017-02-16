@@ -1,4 +1,4 @@
-set +x
+set -x
 
 ## installo software 
 apt-get update
@@ -9,7 +9,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password password'
 sudo apt-get -y install mysql-server
 
-sudo apt-get -y install apache2 php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php-xsl php-mbstring php-zip php-xml composer php-gd php-mcrypt
+sudo apt-get -y install apache2 php libapache2-mod-php mysql-server php-mysql php-dom php-simplexml php-curl php-intl php-xsl php-mbstring php-zip php-xml php-gd php-mcrypt
 
 sudo a2enmod rewrite
 
@@ -29,14 +29,18 @@ sudo service apache2 reload
 cat /vagrant/magento.sql | sudo mysql --defaults-extra-file=/etc/mysql/debian.cnf
 
 ## inserisco file autenticazione
-sudo cp /vagrant/auth.json ~/.composer/auth.json
+
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+sudo cp /vagrant/auth.json /root/.composer/auth.json
 
 ## installo magento2
+sudo chown -R ubuntu:www-data /var/www/
 cd /var/www/
-git clone -b 2.0 https://github.com/magento/magento2.git public
+git clone --depth=2 -b 2.1 https://github.com/magento/magento2.git public
 cd public
 
-chown -R ubuntu:www-data /var/www/
+sudo chown -R ubuntu:www-data /var/www/
 
 sudo chmod -R 755 /var/www/public/
 sudo chmod -R 777 /var/www/public/var/
@@ -51,7 +55,6 @@ sudo cp /vagrant/crontab /var/spool/cron/crontabs/ubuntu
 
 sudo cp -R /vagrant/plugins/* /var/www/public/app/code/
 
-chown -R ubuntu:www-data /var/www/
+sudo chown -R ubuntu:www-data /var/www/
 
-sudo php bin/magento setup:upgrade
-
+php bin/magento setup:config:set --db-host="localhost" --db-name="magento" --db-user="root" --db-password="password"
