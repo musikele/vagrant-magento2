@@ -1,5 +1,5 @@
-# wordpress-vagrant
-A vagrant image of a wordpress blog. 
+# wordpress-magento2
+A vagrant image of a Magento 2.x system. 
 
 A big part of this configuration comes from [https://www.vultr.com/docs/installing-magento-2-on-ubuntu](https://www.vultr.com/docs/installing-magento-2-on-ubuntu).
 
@@ -19,7 +19,7 @@ Then, rename the file `auth_template.json` in `auth.json` and fill with your dat
 
 Once you're ready go to [http://localhost:8080/admin] and start the installation.  
 
-## To copy my plugins
+## To copy your plugins
 
 put your plugins in a folder called `plugins`, they will be copied over magento's `app/code/` directory. 
 
