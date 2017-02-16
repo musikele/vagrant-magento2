@@ -34,7 +34,7 @@ sudo cp /vagrant/auth.json ~/.composer/auth.json
 ## installo magento2
 cd /var/www/
 git clone -b 2.0 https://github.com/magento/magento2.git public
-cd magento2
+cd public
 
 chown -R ubuntu:www-data /var/www/
 
