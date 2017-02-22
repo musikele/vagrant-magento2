@@ -19,7 +19,9 @@ At this point you can launch:
 vagrant up 
 ```
 
-The first time it can take even 10 minutes to work. Once you're ready go to [http://localhost:8080/admin] and start the installation.  
+The first time it can take even 10 minutes to work. Once you're ready go to [http://127.0.0.1:8080/admin] and start the installation.  
+
+> **Don't use localhost as a host**, change as soon as you can.
 
 ## To copy your plugins
 
@@ -28,7 +30,7 @@ put your plugins unzipped in the `plugins` folder. They will be copied over mage
 To install the plugin you have to launch this command: 
 
 ```
-$ php bin/magento setup:upgrade
+$ php bin/magento setup:up
 ```
 
 ## sensitive informations 

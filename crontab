@@ -24,5 +24,5 @@
 # 
 # m h  dom mon dow   command
 * * * * * /usr/bin/php /var/www/public/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/public/var/log/magento.cron.log
-* * * * * /usr/bin/php /var/www/public/update/cron.php >> /var/www/public/var/log/update.cron.log
-* * * * * /usr/bin/php /var/www/public/bin/magento setup:cron:run >> /var/www/public/var/log/setup.cron.log
+#* * * * * /usr/bin/php /var/www/public/update/cron.php >> /var/www/public/var/log/update.cron.log
+#* * * * * /usr/bin/php /var/www/public/bin/magento setup:cron:run >> /var/www/public/var/log/setup.cron.log

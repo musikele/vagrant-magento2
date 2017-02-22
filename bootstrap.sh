@@ -1,5 +1,3 @@
-set -x
-
 ## installo software 
 apt-get update
 apt-get install -y language-pack-it
@@ -58,3 +56,7 @@ sudo cp -R /vagrant/plugins/* /var/www/public/app/code/
 sudo chown -R ubuntu:www-data /var/www/
 
 php bin/magento setup:config:set --db-host="localhost" --db-name="magento" --db-user="root" --db-password="password"
+
+sudo chmod -R 755 /var/www/public/
+sudo chown -R ubuntu:www-data /var/www/
+
