@@ -19,9 +19,9 @@ At this point you can launch:
 vagrant up 
 ```
 
-The first time it can take even 10 minutes to work. Once you're ready go to [http://127.0.0.1:8080/admin] and start the installation.  
+The first time it can take even 10 minutes to work. Once you're ready go to [http://127.0.0.1:8080/setup] and start the installation.  
 
-> **Don't use localhost as a host**, change as soon as you can.
+> **Don't use localhost as a host**, go in System settings and change as soon as you can.
 
 ## To copy your plugins
 
